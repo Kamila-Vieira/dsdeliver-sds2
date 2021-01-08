@@ -1,23 +1,20 @@
 import React from "react";
+import { fotmatPrice } from "./helpers";
 import "./styles.css";
 import { Product } from "./types";
 
 type Props = {
   product: Product;
+  onSelecProduct: (product: Product) => void;
+  isSelected: boolean;
 };
 
-function fotmatPrice(price: number) {
-  const formatter = new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
-    minimumFractionDigits: 2,
-  });
-  return formatter.format(price);
-}
-
-function ProductCard({ product }: Props) {
+function ProductCard({ product, onSelecProduct, isSelected }: Props) {
   return (
-    <div className="order-card-container">
+    <div
+      className={`order-card-container ${isSelected ? "selected" : ""}`}
+      onClick={() => onSelecProduct(product)}
+    >
       <h3 className="order-card-title">{product.name}</h3>
       <img
         src={product.imageUri}
