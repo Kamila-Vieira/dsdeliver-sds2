@@ -18,3 +18,10 @@
 .footer-icons > * {
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 768px) {
+  .footer-text {
+    margin: auto 10px;
+    line-height: 20px;
+  }
+}
