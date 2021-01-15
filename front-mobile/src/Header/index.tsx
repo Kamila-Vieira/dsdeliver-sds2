@@ -1,7 +1,12 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 export default function Header() {
   const navigation = useNavigation();
